@@ -243,10 +243,6 @@ document.addEventListener('DOMContentLoaded', () => {
             `;
             form.insertAdjacentElement('afterend', statusMessage);
 
-            const requst = new XMLHttpRequest();
-            requst.open('POST', 'server.php');
-
-            requst.setRequestHeader('Content-type', 'application/json');
             const formData = new FormData(form);
 
             const object = {};
@@ -254,19 +250,22 @@ document.addEventListener('DOMContentLoaded', () => {
                 object[key] = value;
             });
 
-            const json = JSON.stringify(object);
-
-            requst.send(json);
-
-            requst.addEventListener('load', () => {
-                if (requst.status === 200) {
-                    console.log(requst.response);
+            fetch('server.php', {
+                method: 'POST',
+                headers: {
+                    'Content-type': 'application/json'
+                },
+                body: JSON.stringify(object)
+            })
+                .then(data => data.text())
+                .then(data => {
+                    console.log(data);
                     showThanksModal(messages.success);
-                    form.reset();
                     statusMessage.remove();
-                } else {
-                    showThanksModal(messages.failure);
-                }
+                }).catch(() => {
+                showThanksModal(messages.failure);
+            }).finally(() => {
+                form.reset();
             });
         });
     }
@@ -294,6 +293,10 @@ document.addEventListener('DOMContentLoaded', () => {
             closeModal();
         }, 4000);
     }
+
+    /*    fetch('https://jsonplaceholder.typicode.com/todos/1')
+            .then(response => response.json())
+            .then(json => console.log(json));*/
 });
 
 
