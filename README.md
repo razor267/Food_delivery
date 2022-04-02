@@ -23,7 +23,13 @@ json-server db.json
 # Interface
 <p align="center"><img src="https://i.ibb.co/VQq1XvZ/preview-project.gif" alt="ReviewProject"/></p>
 <div align="right">
-  <img src="https://i.ibb.co/3m5wrjD/icons8-javascript-is-a-high-level-interpreted-programming-language-48.png" alt="js" height="40px"/>
-  <img src="https://i.ibb.co/72YpBjg/icons8-css-60.png" alt="css" height="40px"/>
-  <img src="https://i.ibb.co/R6XVMZt/html-icon.png" alt="html" height="40px"/>
+  <a href="https://www.javascript.com/">    
+    <img src="https://github.com/devicons/devicon/blob/master/icons/javascript/javascript-original.svg" title="JavaScript" alt="JavaScript" width="40" height="40"/>&nbsp;
+  </a>
+  <a href="https://www.w3.org/Style/CSS/">
+    <img src="https://github.com/devicons/devicon/blob/master/icons/css3/css3-plain-wordmark.svg"  title="CSS3" alt="CSS" width="40" height="40"/>&nbsp;
+  </a>
+  <a href="https://html.spec.whatwg.org/">    
+    <img src="https://github.com/devicons/devicon/blob/master/icons/html5/html5-original.svg" title="HTML5" alt="HTML" width="40" height="40"/>&nbsp;
+  </a>
 </div> 
